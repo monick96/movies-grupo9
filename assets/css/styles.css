@@ -48,7 +48,7 @@ nav a:visited {
 nav ul {
     list-style: none;
     display: flex;
-    color: white;
+    
 }
 
 nav li {
@@ -58,6 +58,7 @@ nav li {
 }
 
 .a-link-header{
+    color: white;
     padding: 0.5rem;
     border-radius: 6px;
     font-weight: 700;
