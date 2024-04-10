@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Solid:wght@100;300;400;900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tauri&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Ultra&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+main{
+    background-color: black;
+}
+
+/* #------------------------------------- HEADER + NAV -------------------------------------# */
+
+header {
+    background-color: #9f3647;
+    height: 10vh;
+    top: 0;
+    position: sticky;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav a i{
+    font-size: 1.2rem;
+}
+
+.a-icon-header {
+    text-decoration: none;
+    color: white;
+    margin-top: 0.8rem;
+}
+
+nav a:visited {
+    color: white
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    color: white;
+}
+
+nav li {
+    padding: 0.5rem;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+.a-link-header{
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 300ms ease;
+    
+}
+
+.a-link-header:hover{
+    box-shadow: 0px 0px 5px -1px black;
+}
+
+#iniciar-sesion{
+    padding: 0.5rem;
+    border-radius: 6px ;
+    background-color: black;
+}
+
+#iniciar-sesion:hover{
+    background-color: rgba(0, 0, 0, 0);
+    background-size: cover;
+}
+
+/* #------------------------------------- HEADER + NAV -------------------------------------# */
+
+/* #------------------------------------- BANNER INICIO -------------------------------------# */
+
+.section-banner-intro {
+    background: linear-gradient(rgba(5, 7, 12, 0.60), rgba(21, 26, 26, 0.6)), url("../images/index/banner.jpg"), no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 90vh;
+    animation: slideInDown;
+    animation-duration: 1.5s;
+    
+}
+
+.texto-banner-intro{
+    color: white;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+.texto-banner-intro h1 {
+    width: 80%;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.texto-banner-intro h2 {
+    margin-top: 0.5rem;
+    width: 80%;
+    font-size: 2rem;
+    font-weight: 550;
+}
+
+.texto-banner-intro a,  .texto-banner-intro a:visited{
+    -webkit-text-stroke-width: none;
+    -webkit-text-stroke-color: none;
+    background-color: #9f3647;
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 200;
+    border-radius: 6px;
+    transition: all 500ms ease;
+
+}
+
+.texto-banner-intro a:hover{
+    font-weight: 300;
+    padding: 1.3rem;
+    font-size: 1.4rem;
+    box-shadow: 0px 0px 6px -2px white;
+}
+
+/* #------------------------------------- BANNER INICIO -------------------------------------# */
