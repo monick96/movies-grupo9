@@ -15,7 +15,7 @@ main{
 
 header {
     background-color: #9f3647;
-    height: 10vh;
+    max-height: 10vh;
     top: 0;
     position: sticky;
 }
@@ -60,8 +60,8 @@ nav li {
 .a-link-header{
     color: white;
     padding: 0.5rem;
-    border-radius: 6px;
-    font-weight: 700;
+    border-radius: 8px;
+    font-weight: 650;
     font-size: 1.2rem;
     transition: all 300ms ease;
     
@@ -73,7 +73,7 @@ nav li {
 
 #iniciar-sesion{
     padding: 0.5rem;
-    border-radius: 6px ;
+    border-radius: 8px ;
     background-color: black;
 }
 
@@ -82,6 +82,41 @@ nav li {
     background-size: cover;
 }
 
+@media only screen and (max-width: 750px) {
+    
+    header{
+        max-height: 15vh;
+    }
+
+    nav {
+        padding: 0.5rem 0 0.5rem 0 ;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .a-icon-header {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul{
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-evenly;
+        margin-top: 0.7rem;
+    }
+    
+    nav li {
+        padding: 0.5rem;
+        margin-right: 0;
+        text-align: center;
+    }
+    
+    .a-link-header{
+        font-size: 1rem;
+    }
+}
 /* #------------------------------------- HEADER + NAV -------------------------------------# */
 
 /* #------------------------------------- BANNER INICIO -------------------------------------# */
@@ -93,7 +128,6 @@ nav li {
     height: 90vh;
     animation: slideInDown;
     animation-duration: 1.5s;
-    
 }
 
 .texto-banner-intro{
@@ -128,12 +162,11 @@ nav li {
     color: white;
     padding: 1rem;
     text-decoration: none;
-    margin-top: 1rem;
+    margin-top: 1.3rem;
     font-size: 1.1rem;
     font-weight: 200;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: all 500ms ease;
-
 }
 
 .texto-banner-intro a:hover{
@@ -143,4 +176,31 @@ nav li {
     box-shadow: 0px 0px 6px -2px white;
 }
 
+@media only screen and (max-width: 750px){
+    .section-banner-intro {
+        max-height: 55vh;
+    }
+    
+    .texto-banner-intro{
+        padding: 5rem 0 4rem 0;
+    }
+    
+    .texto-banner-intro h1 {
+        font-size: 1.75rem;
+    }
+    
+    .texto-banner-intro h2 {
+        font-size: 1rem;
+    }
+    
+    .texto-banner-intro a,  .texto-banner-intro a:visited{
+        font-size: 0.8rem;
+        font-weight: 200;
+    }
+    
+    .texto-banner-intro a:hover{
+        padding: 1.1rem;
+        font-size: 1rem;
+    }
+}
 /* #------------------------------------- BANNER INICIO -------------------------------------# */
