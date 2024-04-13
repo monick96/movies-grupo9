@@ -437,3 +437,100 @@ main section#trend button.button:hover{
 
 
 /*---------------------------FIN estilo TRENDS------------*/
+
+/*---------------------------Inicio estilo foooter------------*/
+footer{
+    background-color: #9f3647;
+    color: #ffffff;
+    height: 15vh;
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer ul li{
+    list-style: none;
+    /* display: inline-block; */
+    margin-right: 2rem;
+   
+}
+
+footer ul li a {  
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+footer ul li a.linkManage{
+    background-color: #181419;
+    padding: 0.5rem 0.1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+footer a.upArrow{
+    display: none;
+}
+
+/*media flecha*/
+@media only screen and (min-width: 790px){
+    footer a.upArrow{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        background: #1814197e;
+        padding: 0.5rem 1rem;
+        border-radius: 60px;
+        width: 100%;
+        transition: all 0.5s ease;
+        
+    }
+    
+    footer a.upArrow:hover{
+        box-shadow: rgba(159, 54, 72, 0.804) 0px 0px 30px;
+        transform: scale(0.9);
+    }
+
+    
+
+}
+
+@media only screen and (max-width: 768px){
+    footer ul{
+        flex-direction: column;
+        row-gap: 0.5rem;
+    }
+
+    footer ul li a{
+        font-size: 1rem;
+    }
+
+    footer{
+        height: 20vh;
+    }
+
+    footer .container{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+}
+
+
+
+
+
+/*---------------------------FIN estilo foooter------------*/
