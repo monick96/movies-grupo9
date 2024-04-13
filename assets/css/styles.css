@@ -19,6 +19,8 @@ header {
     max-height: 10vh;
     top: 0;
     position: sticky;
+    /* evita superposicion del aos animation*/
+    z-index: 3;
 }
 
 nav {
@@ -348,8 +350,8 @@ main section#trend .trendMovies .movie img{
 }
 
 main section#trend .trendMovies .movie .movieTittle{
-    z-index: 2;
-    position: absolute;
+    /* z-index: 2; */
+    /* position: absolute; */
     text-align: center;
     top: 50%;
     left: 50%;
