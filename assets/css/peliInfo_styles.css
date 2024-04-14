@@ -91,7 +91,7 @@ nav li {
     header{
         /* max-height: 15vh; */
         /*Aumento a 20vh*/
-        max-height: 18vh;
+        min-height: 20vh;
     }
 
     nav {
