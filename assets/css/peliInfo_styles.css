@@ -16,9 +16,11 @@ main {
 
 header {
     background-color: #9f3647;
-    max-height: 15vh;
+    /* cambio de 15 a 12vh */
+    min-height: 12vh;
     top: 0;
     position: sticky;
+    /* evita superposicion del aos animation*/
     z-index: 5;
 }
 
@@ -26,7 +28,7 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 0 2rem;
 }
 
 nav a{
@@ -50,6 +52,7 @@ nav a:visited {
 nav ul {
     list-style: none;
     display: flex;
+    margin-bottom: 0;
 }
 
 nav li {
@@ -59,6 +62,7 @@ nav li {
 }
 
 .a-link-header{
+    color: white;
     padding: 0.5rem;
     border-radius: 8px;
     font-weight: 650;
@@ -82,10 +86,12 @@ nav li {
     background-size: cover;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 760px) {
     
     header{
-        max-height: 20vh;
+        /* max-height: 15vh; */
+        /*Aumento a 20vh*/
+        max-height: 18vh;
     }
 
     nav {
@@ -101,10 +107,11 @@ nav li {
     }
 
     nav ul{
-        width: 100%;
+        width: 80%;
         display: inline-flex;
         justify-content: space-evenly;
         margin-top: 0.7rem;
+        padding: 0;
     }
     
     nav li {
@@ -116,6 +123,24 @@ nav li {
     .a-link-header{
         font-size: 1rem;
     }
+
+
+}
+
+@media only screen and (max-width: 460px){
+    nav a i{
+        font-size: 1rem;
+    }
+
+    nav ul{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .a-link-header{
+        font-size: 0.9rem;
+    }
+
 }
 /* #endregion #------------------------------------- HEADER + NAV -------------------------------------# */
 
@@ -378,3 +403,101 @@ a {
     }
 }
 /* #------------------------------------- EXTRA INFORMATION -------------------------------------# */
+
+/*---------------------------FIN estilo TRENDS------------*/
+
+/*---------------------------Inicio estilo foooter------------*/
+footer{
+    background-color: #9f3647;
+    color: #ffffff;
+    height: 15vh;
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer ul li{
+    list-style: none;
+    /* display: inline-block; */
+    margin-right: 2rem;
+   
+}
+
+footer ul li a {  
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+footer ul li a.linkManage{
+    background-color: #181419;
+    padding: 0.5rem 0.1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+footer a.upArrow{
+    display: none;
+}
+
+
+/*media flecha*/
+@media only screen and (min-width: 790px){
+    footer a.upArrow{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        background: #1814197e;
+        padding: 0.5rem 1rem;
+        border-radius: 60px;
+        width: 100%;
+        transition: all 0.5s ease;
+        
+    }
+    
+    footer a.upArrow:hover{
+        box-shadow: rgba(159, 54, 72, 0.804) 0px 0px 30px;
+        transform: scale(0.9);
+    }
+}
+
+@media only screen and (max-width: 768px){
+
+    footer {
+        min-height: 30vh;
+    }
+
+    footer ul{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 0.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    footer ul li a{
+        font-size: 1rem;
+    }
+
+    footer{
+        height: 23vh;
+    }
+
+    footer .container{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/*---------------------------FIN estilo foooter------------*/
