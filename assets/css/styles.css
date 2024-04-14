@@ -16,8 +16,8 @@ main{
 
 header {
     background-color: #9f3647;
-    /* cambio de 10 a 15vh */
-    max-height: 15vh;
+    /* cambio de 15 a 12vh */
+    min-height: 12vh;
     top: 0;
     position: sticky;
     /* evita superposicion del aos animation*/
@@ -28,7 +28,7 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 0 2rem;
 }
 
 nav a{
@@ -52,7 +52,7 @@ nav a:visited {
 nav ul {
     list-style: none;
     display: flex;
-    
+    margin-bottom: 0;
 }
 
 nav li {
@@ -86,12 +86,12 @@ nav li {
     background-size: cover;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 760px) {
     
     header{
         /* max-height: 15vh; */
         /*Aumento a 20vh*/
-        max-height: 20vh;
+        max-height: 18vh;
     }
 
     nav {
@@ -107,10 +107,11 @@ nav li {
     }
 
     nav ul{
-        width: 100%;
+        width: 80%;
         display: inline-flex;
         justify-content: space-evenly;
         margin-top: 0.7rem;
+        padding: 0;
     }
     
     nav li {
@@ -122,6 +123,24 @@ nav li {
     .a-link-header{
         font-size: 1rem;
     }
+
+
+}
+
+@media only screen and (max-width: 460px){
+    nav a i{
+        font-size: 1rem;
+    }
+
+    nav ul{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .a-link-header{
+        font-size: 0.9rem;
+    }
+
 }
 /* #------------------------------------- HEADER + NAV -------------------------------------# */
 
@@ -188,7 +207,7 @@ nav li {
     }
     
     .texto-banner-intro{
-        padding: 5rem 0 4rem 0;
+        padding: 2.6rem 0 3rem 0;
     }
     
     .texto-banner-intro h1 {
@@ -286,7 +305,7 @@ main section.search .buttonSearch:hover{
 
     main section.search .buttonSearch{
         height: 40px;
-        padding: 0 15px;
+        padding: 0 0.9rem;
         font-size: 1rem;
     }
 
@@ -481,6 +500,7 @@ footer a.upArrow{
     display: none;
 }
 
+
 /*media flecha*/
 @media only screen and (min-width: 790px){
     footer a.upArrow{
@@ -507,9 +527,17 @@ footer a.upArrow{
 }
 
 @media only screen and (max-width: 768px){
+
+    footer {
+        min-height: 30vh;
+    }
+
     footer ul{
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        row-gap: 0.5rem;
+        row-gap: 0.8rem;
+        margin-bottom: 0.2rem;
     }
 
     footer ul li a{
@@ -526,12 +554,5 @@ footer a.upArrow{
         justify-content: center;
         align-items: center;
     }
-    
-    
 }
-
-
-
-
-
 /*---------------------------FIN estilo foooter------------*/
