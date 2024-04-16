@@ -553,3 +553,56 @@ footer a.upArrow{
     }
 }
 /*---------------------------FIN estilo foooter------------*/
+
+/*---------------------------inicio estilo ACLAMADAS------------*/
+
+#aclamadasContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+#aclamadasContainer::-webkit-scrollbar {
+    width: 10px;
+}
+
+#aclamadasContainer::-webkit-scrollbar-track {
+    background-color:#181419; 
+}
+
+#aclamadasContainer::-webkit-scrollbar-thumb {
+    background-color:#9f3647; 
+
+      }
+
+.peliculaItem {
+        border-radius: 25px;
+        width: 170px;
+        min-width: 170px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+
+.imgAclamada {
+    border-radius: 5%;
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+  }
+
+  .imgAclamada:hover {
+    box-shadow: rgba(159, 54, 72, 0.804) 0px 0px 30px;
+    transform: scale(0.9);
+}
+ 
+  
+/*---------------------------FIN estilo ACLAMADAS------------*/
