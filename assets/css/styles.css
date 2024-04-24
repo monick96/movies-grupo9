@@ -21,7 +21,7 @@ header {
     top: 0;
     position: sticky;
     /* evita superposicion del aos animation*/
-    z-index: 5;
+    z-index: 10;
 }
 
 nav {
@@ -351,7 +351,6 @@ main section#trend .trendMovies a{
 main section#trend .trendMovies .movie{
     width: 200px;
     height: 300px;
-    /* position: relative; */
     overflow: hidden;
     border-radius: 10px;
     transition: all 0.5s ease;
@@ -370,7 +369,7 @@ main section#trend .trendMovies .movie img{
 }
 
 main section#trend .trendMovies .movie .movieTittle{
-    z-index: 2; 
+    z-index: 2;
     position: absolute;
     text-align: center;
     top: 50%;
@@ -378,34 +377,30 @@ main section#trend .trendMovies .movie .movieTittle{
     max-width: 20rem;
     width: 100%;
     transform: translateY(-50%) translateX(-50%);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(20px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    height: 100%;
 
 }
 
 /*hoover2*/
-main section#trend .trendMovies .movie .movieTittle:hover{
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(20px);
+main section#trend .trendMovies .movie:hover .movieTittle{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    opacity: 1;
 }
 
 main section#trend .trendMovies .movie .movieTittle h4{
     font-size: 1.6rem;
     font-weight: bold;
-    opacity: 0;
     margin-bottom: 0.5rem;
     letter-spacing: 0.1rem;
-    transition: opacity 0.5s ease-in-out;
+
 }
 
-/*hoover3*/
-main section#trend .trendMovies .movie .movieTittle h4:hover{
-    width: 100%;
-    opacity: 1;
-    padding: 0.5rem;
-}
 
 /*buttons*/
 main section#trend button.button{
@@ -424,6 +419,7 @@ main section#trend button.button{
     transition: transform 0.3s, box-shadow 0.3s;
 
 }
+
 main section#trend button.button:hover{
     background-color: #9f3647;
     transform: scale(0.95);
