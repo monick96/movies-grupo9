@@ -7,10 +7,15 @@
     font-family: 'Nunito', sans-serif;
 }
 
-main{
+body{
     background-color: #181419;
     color: white;
 }
+
+/* main{
+    background-color: #181419;
+    color: white;
+} */
 
 /* #------------------------------------- HEADER + NAV -------------------------------------# */
 
@@ -455,6 +460,7 @@ main section#trend button.button:hover{
 /*---------------------------FIN estilo TRENDS------------*/
 
 /*---------------------------Inicio estilo foooter------------*/
+/* Estilos para el footer */
 footer{
     background-color: #9f3647;
     color: #ffffff;
@@ -465,51 +471,73 @@ footer{
     align-items: center;
 }
 
+.container{
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 footer ul {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    list-style: none;
 }
 
 footer ul li{
-    list-style: none;
-    /* display: inline-block; */
-    margin-right: 2rem;
+    /* list-style: none;
+    display: inline-block; 
+    margin-right: 2rem; */
+    margin-left: 20px;
    
-}
+} 
 
 footer ul li a {  
     color: #ffffff;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
+    font-size: 1.2rem;
+}
+
+footer ul li:not(:last-child) a:hover{
+    text-decoration: underline;
+    color: whitesmoke;
 }
 
 footer ul li a.linkManage{
     background-color: #181419;
-    padding: 0.5rem 0.1rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 1rem;
 }
 
+footer ul li a.linkManage:hover{
+    box-shadow: rgba(252, 252, 252, 0.247) 0px 0px 30px;
+    transform: scale(0.95);
+}
+
 footer a.upArrow{
     display: none;
-}
+}  
 
 
 /*media flecha*/
-@media only screen and (min-width: 790px){
+@media only screen and (min-width: 769px){
     footer a.upArrow{
-        display: flex;
+        display: flex; 
+        color: white;
+        background: #1814197e;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: white;
-        background: #1814197e;
         padding: 0.5rem 1rem;
         border-radius: 60px;
         width: 100%;
         transition: all 0.5s ease;
+        cursor: pointer; 
         
     }
     
@@ -520,11 +548,7 @@ footer a.upArrow{
 }
 
 @media only screen and (max-width: 768px){
-
-    footer {
-        min-height: 30vh;
-    }
-
+    
     footer ul{
         justify-content: center;
         align-items: center;
@@ -537,17 +561,22 @@ footer a.upArrow{
         font-size: 1rem;
     }
 
-    footer{
-        height: 23vh;
-    }
-
     footer .container{
         display: flex;
         align-content: center;
         justify-content: center;
         align-items: center;
     }
-}
+
+    footer .col-md-11{
+        width: 100% !important;
+    }
+    footer{
+        min-height: 30vh;
+    }
+} 
+
+
 /*---------------------------FIN estilo foooter------------*/
 
 /*---------------------------inicio estilo ACLAMADAS------------*/
