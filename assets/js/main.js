@@ -1,31 +1,40 @@
-// Definimos la URL de la api de donde se traen el json de movies
+// Definimos la URL de la api de donde se traen los datos de las peliculas 
 const ApiMovie = 'https://api.themoviedb.org/3';
+//guardo en una constante la llave para acceder a los datos de la API
+const ApiKey = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYTJjYTAwZDYxZWIzOTEyYjZlNzc4MDA4YWQ3ZmNjOCIsInN1YiI6IjYyODJmNmYwMTQ5NTY1MDA2NmI1NjlhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4MJSPDJhhpbHHJyNYBtH_uCZh4o0e3xGhZpcBIDy-Y8';
 
 //definimos el objeto options  que contiene las configuraciones necesarias para la solicitud fetch
 const options = {
     method: 'GET', // Método de la petición (GET)
     headers: {
         accept: 'application/json', // Tipo de respuesta esperada (JSON)
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYTJjYTAwZDYxZWIzOTEyYjZlNzc4MDA4YWQ3ZmNjOCIsInN1YiI6IjYyODJmNmYwMTQ5NTY1MDA2NmI1NjlhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4MJSPDJhhpbHHJyNYBtH_uCZh4o0e3xGhZpcBIDy-Y8'
+        Authorization: ApiKey
         
     }
 };
 
-let trendMovies = [];
-// Función para cargar trend Movies
-const fetchMoviesTrend = (page = 1) => {
+//variable para rastrear la página actual. Inicializa la pagina con el valor 1.
+let currentPage = 1;
+
+// Fetch para cargar trend Movies
+function fetchMoviesTrend (page = 1){
     // Realizamos una petición fetch a la API para obtener las películas populares
     fetch(`${ApiMovie}/movie/popular?page=${page}`, options)
         .then(response => response.json()) // Convertimos la respuesta a JSON
         .then(data => {
-            // Extraemos las películas de la respuesta
-            trendMovies = data.results;
-            renderMovies(trendMovies)
-        });
+            // Extraemos las películas de la respuesta y pasamos 
+            //como argumento a la  funcion  para renderizarlas
+            renderTrendMovies(data.results);
+            //obtengo el elemeto  y seteo el data-page a la pagina actual
+            document.querySelector('#trend').setAttribute('data-page', page);
+        })
+        .catch(error => console.error('Error fetching popular movies:', error));//manejo de error 
 }
 
+
+
 //Funcion para renderizar los datos obtenidos de la API en trends movies
-function renderMovies(movies) {
+function renderTrendMovies(movies) {
     const moviesResult = movies;
     let template = '';
     for(let movie of moviesResult) {
@@ -54,16 +63,14 @@ fetchMoviesTrend();
 // Event listeners para los botones de paginación
 //before button
 document.querySelector('#prev').addEventListener('click', () => {
-    let currentPage = Number(document.querySelector('#trend').getAttribute('data-page')) || 1;
     if (currentPage > 1) {
-        fetchMoviesTrend(currentPage - 1);
-        document.querySelector('#trend').setAttribute('data-page', currentPage - 1);
+        currentPage --;
+        fetchMoviesTrend(currentPage);
     }
 });
 
 //next button
 document.querySelector('#buttonNext').addEventListener('click', () => {
-    let currentPage = Number(document.querySelector('#trend').getAttribute('data-page')) || 1;
-    fetchMoviesTrend(currentPage + 1);
-    document.querySelector('#trend').setAttribute('data-page', currentPage + 1);
+    currentPage++;
+    fetchMoviesTrend(currentPage);
 });
