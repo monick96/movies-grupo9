@@ -1,58 +1,43 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAC-MOVIES</title>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="iniciosesion.css">
-    
-    <link rel="stylesheet" href="./assets/css/iniciosesion.css">
-    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
-    <body class="bodyIniciosesion">
-        <header class="headerIniciosesion">
-            <a class="anclaLogo" href="index.html">
-                <i class="fas fa-film" aria-hidden="true"></i>
-                <span>CAC-Movies</span>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>inicionSesion</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+        <link rel="stylesheet" href="./assets/css/inicioSesion.css">
+        <script src="https://kit.fontawesome.com/1f4579245f.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <a class="boton-volver" href="index.html">
+                <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+                <p>Volver</p>
             </a>
         </header>
-        <main id="main" class="main">
-            <section data-aos="zoom-in" data-aos-duration="1000" class="seccionRegistrarse">
-                <form action="" method="get">
-                    <h2 class="tituloRegistrarse">Iniciar Sesión</h2>
-                    
+        <main>
+            <div class="box-iniciarsesion" data-aos="zoom-in" data-aos-duration="1000">
+                <h2>Iniciar Sesión</h2>
+                <form action="post">
                     <div>
-                        <input type="email" placeholder="Email"  id="email" name="email">
-                        <div class="error-text"></div>
+                        <input type="text" placeholder="Email/Usuario" required class="form-usuario" id="usuario">
                     </div>
                     <div>
-                        <input type="password" placeholder="Contraseña"  id="password" name="password">
-                        <div class="error-text"></div>
+                        <input type="password" placeholder="Contraseña" required class="form-password" id="password">
                     </div>
-                    <!--  -->
-                
-                    <div class="centrar">
-                        <input class="boton" type="submit" value="Iniciar Sesión">
-                    </div>
-                    <div>
-                        <a class="ayuda" href="registrarse.html">Registrarse</a>
-                    </div>
+                    <p class="olvidar-contraseña">¿Olvidó su contraseña?</p>
+                    <p class="text-datosIncorrectos" id="datos-incorrectos">Datos incorrectos. Vuelva a Intentarlo</p>
+                    <input type="submit" value="Iniciar Sesión" class="boton-enviar" id="boton-enviar">
                 </form>
-            </section>
+                <p>¿Todavía no estás registrado?</p>
+                <a class="boton-registrarse" href="registrarse.html">Registrarse</a>
+            </div>
         </main>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-     <script src="../js/valida_registrarse.js"></script>
+        <script rel="js" src="./assets/js/inicioSesion.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init();</script>
     </body>
 </html>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-   <script src="../js/valida_registrarse.js"></script>

@@ -91,7 +91,7 @@ nav li {
     background-size: cover;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 955px) {
     
     header{
         /* max-height: 15vh; */
@@ -132,7 +132,7 @@ nav li {
 
 }
 
-@media only screen and (max-width: 460px){
+@media only screen and (max-width: 650px){
     nav a i{
         font-size: 1rem;
     }
