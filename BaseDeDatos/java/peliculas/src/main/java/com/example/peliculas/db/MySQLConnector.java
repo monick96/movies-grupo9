@@ -22,8 +22,11 @@ public class MySQLConnector {
 
         } catch (Exception e) { //Ejecuta un error si el "try" no funciona
             e.printStackTrace();
+
+            // Opcional: lanzar una RuntimeException para propagar el error de conexion
+            throw new RuntimeException("Error al conectar a la base de datos", e);
         }
         
-        return null;
+        //return null;
     }
 }
