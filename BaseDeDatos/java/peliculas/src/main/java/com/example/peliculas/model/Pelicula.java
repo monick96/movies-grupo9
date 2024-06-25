@@ -15,10 +15,11 @@ public class Pelicula {
     private String descripcion;
     private String idioma;
     private Boolean estrenada;
+    private String portada;
 
     // Constructor
     public Pelicula(Integer id, String titulo, Date fechaLanzamiento, Integer puntuacion, Time duracion,
-            String descripcion, String idioma, Boolean estrenada) {
+            String descripcion, String idioma, Boolean estrenada, String portada) {
         this.id = id;
         this.titulo = titulo;
         this.fechaLanzamiento = fechaLanzamiento;
@@ -27,6 +28,7 @@ public class Pelicula {
         this.descripcion = descripcion;
         this.idioma = idioma;
         this.estrenada = estrenada;
+        this.portada = portada;
     }
 
     //Setters y Getters
@@ -94,8 +96,12 @@ public class Pelicula {
         this.estrenada = estrenada;
     }
 
-    
+    public void setPortada(String portada) {
+        this.portada = portada;
+    }
 
-    
+    public String getPortada() {
+        return portada;
+    }
 
 }
