@@ -9,6 +9,7 @@ import java.sql.ResultSet;
  * Esta clase contiene las consultas/queries a la tabla "peliculas" de la base de datos
  */
 public class PeliculaDAO {
+    //atributo para ejecutar consultas sql
     private Statement st;
     
     //Constructor
