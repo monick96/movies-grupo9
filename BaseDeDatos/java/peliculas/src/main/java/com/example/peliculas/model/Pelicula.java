@@ -30,6 +30,18 @@ public class Pelicula {
         this.estrenada = estrenada;
         this.portada = portada;
     }
+    //constructor sin id
+    public Pelicula(String titulo2, Date fechaLanzamiento2, Integer puntuacion2, Time duracion2, String descripcion2,
+            String idioma2, Boolean estrenada2, String portada2) {
+                this.titulo = titulo2;
+                this.fechaLanzamiento = fechaLanzamiento2;
+                this.puntuacion = puntuacion2;
+                this.duracion = duracion2;
+                this.descripcion = descripcion2;
+                this.idioma = idioma2;
+                this.estrenada = estrenada2;
+                this.portada = portada2;
+    }
 
     //Setters y Getters
     public Integer getId() {

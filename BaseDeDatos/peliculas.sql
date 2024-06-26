@@ -426,6 +426,16 @@ ALTER TABLE `pelis_productores`
   ADD CONSTRAINT `pelis_productores_ibfk_2` FOREIGN KEY (`productor_id`) REFERENCES `productores` (`id`);
 COMMIT;
 
+--alter para agregar campo portada
+/*
+ALTER TABLE `pelis`.`peliculas` 
+ADD COLUMN `portada` VARCHAR(1000) NOT NULL AFTER `estrenada`;
+*/
+--update para agregar url de portadas
+/*
+UPDATE `pelis`.`peliculas` SET `portada` = 'https://image.tmdb.org/t/p/w500//gKkl37BQuKTanygYQG1pyYgLVgf.jpg' WHERE (id = 1);
+UPDATE `pelis`.`peliculas` SET `portada` = 'https://image.tmdb.org/t/p/w500//nP6RliHjxsz4irTKsxe8FRhKZYl.jpg' WHERE (id = 2);
+*/
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
