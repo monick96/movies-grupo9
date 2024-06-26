@@ -95,7 +95,7 @@ public class PeliculaDAO {
         try {
             Statement st = ConnectorDB.getSt();
 
-            // Construimos la consulta SQL para actualizar una película
+            // consulta SQL para actualizar una película
             String sql = "UPDATE peliculas SET " +
                     "titulo = '" + peli.getTitulo() + "', " +
                     "puntuacion = " + peli.getPuntuacion() + ", " +
@@ -104,7 +104,7 @@ public class PeliculaDAO {
                     "portada = '" + peli.getPortada() + "' " +
                     "WHERE id = " + peli.getId();
 
-            // Ejecutamos la consulta de actualización
+            // Ejecutamos la consulta 
             Integer cantUpdate = st.executeUpdate(sql);
             Boolean updateOk = (cantUpdate == 1);
             return updateOk;
