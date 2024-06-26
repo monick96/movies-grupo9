@@ -91,6 +91,29 @@ public class PeliculaDAO {
         return false;
     }
 
+    public Boolean updatePeli(Pelicula peli) {
+        try {
+            Statement st = ConnectorDB.getSt();
+
+            // Construimos la consulta SQL para actualizar una película
+            String sql = "UPDATE peliculas SET " +
+                    "titulo = '" + peli.getTitulo() + "', " +
+                    "puntuacion = " + peli.getPuntuacion() + ", " +
+                    "descripcion = '" + peli.getDescripcion() + "', " +
+                    "idioma = '" + peli.getIdioma() + "', " +
+                    "portada = '" + peli.getPortada() + "' " +
+                    "WHERE id = " + peli.getId();
+
+            // Ejecutamos la consulta de actualización
+            Integer cantUpdate = st.executeUpdate(sql);
+            Boolean updateOk = (cantUpdate == 1);
+            return updateOk;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error al actualizar la película en la base de datos", e);
+        }
+    }
 
 
 }

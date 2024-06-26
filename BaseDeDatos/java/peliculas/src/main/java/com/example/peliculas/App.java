@@ -94,5 +94,14 @@ public class App
         }
         */
 
+        ///update peli
+        /* 
+        Pelicula peliUpdate = new Pelicula(101,"pelicula",new Date(0),5,new Time(500),"cscv","gsdg",false,"gsdgsdgsd");
+        boolean updateOk = peliculaDAO.updatePeli(peliUpdate);
+        if (updateOk) {
+            System.out.println("Se actualizo correctamente");
+        }
+        */
+
     }
 }
