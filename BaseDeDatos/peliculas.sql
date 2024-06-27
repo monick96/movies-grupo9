@@ -130,16 +130,17 @@ CREATE TABLE `peliculas` (
   `duracion` time NOT NULL,
   `descripcion` varchar(1000) NOT NULL,
   `idioma` varchar(50) NOT NULL,
-  `estrenada` tinyint(1) NOT NULL
+  `estrenada` tinyint(1) NOT NULL,
+  `portada` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `peliculas`
 --
 
-INSERT INTO `peliculas` (`id`, `titulo`, `fechaLanzamiento`, `puntuacion`, `duracion`, `descripcion`, `idioma`, `estrenada`) VALUES
-(1, 'Kingdom of the Planet of the Apes', '2024-05-09', 7, '02:25:00', 'Descripción del planeta de los simios', 'Ingles', 1),
-(2, 'Bad Boys: Ride or Die', '2024-06-07', 7, '01:55:00', 'Descripción de pelicula Bad Boys', 'Ingles', 1);
+INSERT INTO `peliculas` (`id`, `titulo`, `fechaLanzamiento`, `puntuacion`, `duracion`, `descripcion`, `idioma`, `estrenada`,`portada`) VALUES
+(1, 'Kingdom of the Planet of the Apes', '2024-05-09', 7, '02:25:00', 'Descripción del planeta de los simios', 'Ingles', 1, 'https://image.tmdb.org/t/p/w500//gKkl37BQuKTanygYQG1pyYgLVgf.jpg'),
+(2, 'Bad Boys: Ride or Die', '2024-06-07', 7, '01:55:00', 'Descripción de pelicula Bad Boys', 'Ingles', 1, 'https://image.tmdb.org/t/p/w500//nP6RliHjxsz4irTKsxe8FRhKZYl.jpg');
 
 -- --------------------------------------------------------
 
@@ -425,6 +426,16 @@ ALTER TABLE `pelis_productores`
   ADD CONSTRAINT `pelis_productores_ibfk_2` FOREIGN KEY (`productor_id`) REFERENCES `productores` (`id`);
 COMMIT;
 
+--alter para agregar campo portada
+/*
+ALTER TABLE `pelis`.`peliculas` 
+ADD COLUMN `portada` VARCHAR(1000) NOT NULL AFTER `estrenada`;
+*/
+--update para agregar url de portadas
+/*
+UPDATE `pelis`.`peliculas` SET `portada` = 'https://image.tmdb.org/t/p/w500//gKkl37BQuKTanygYQG1pyYgLVgf.jpg' WHERE (id = 1);
+UPDATE `pelis`.`peliculas` SET `portada` = 'https://image.tmdb.org/t/p/w500//nP6RliHjxsz4irTKsxe8FRhKZYl.jpg' WHERE (id = 2);
+*/
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
