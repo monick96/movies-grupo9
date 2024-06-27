@@ -27,52 +27,8 @@ public class App
             System.out.println(peli.getTitulo());
             System.out.println(peli.getPortada());
         }
-        //carga de todos los datos de las pelis por scanner
-        // scanner para que el usuario ingrese datos de la peli
-        Scanner scanner = new Scanner(System.in);
+        //pruebas
         /* 
-        // ingreso de los datos
-        System.out.println("Ingrese el título de la película");
-        String titulo = scanner.nextLine();
-        */
-        System.out.println("Ingrese fecha lanzamiento de la película en formato (yyyy-MM-dd)");
-        String fechaString = scanner.nextLine();
-        //Crear un objeto SimpleDateFormat parsear la fecha ingresada
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date fechaUtil = null;
-        try {
-            fechaUtil = formatoFecha.parse(fechaString);
-        } catch (ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        //fecha para sql
-        java.sql.Date fechaLanzamiento  = new java.sql.Date(fechaUtil.getTime());
-        /*
-        //puntuacion
-        System.out.println("Ingrese la puntuación de la película");
-        Integer puntuacion=scanner.nextInt();
-        */
-        System.out.println("Ingrese duracion de la película en formato (HH:mm:ss)");
-        String tiempoString = scanner.nextLine();
-        //convertimos a localtime
-        LocalTime duracionLocal = LocalTime.parse(tiempoString,DateTimeFormatter.ofPattern("HH:mm:ss"));
-        //convertimos a time
-        Time duracion = Time.valueOf(duracionLocal);
-        /*
-        System.out.println("Ingrese la descripcion de la película");
-        String descripcion = scanner.nextLine();
-
-        System.out.println("Ingrese idioma de la película");
-        String idioma = scanner.nextLine();
-
-        System.out.println("Se encuentra estrenada la película? (s o n)");
-        String resp = scanner.nextLine().toLowerCase();
-        Boolean estrenada = resp.equals("s")? true:false;
-
-        System.out.println("Ingrese la url de la imágen de la película");
-        String portada=scanner.nextLine();
-        */
         //objeto peli ingresado
         //Pelicula nuevaPeli = new Pelicula(titulo,fechaLanzamiento, puntuacion,duracion,descripcion, idioma, estrenada, portada );
         //Date fechaLanzamiento = Date.valueOf("2023-06-27"); // Formato: yyyy-MM-dd
@@ -86,6 +42,7 @@ public class App
         } else {
             System.out.println("Error en la inserción");
         }
+        */
         //eliminar una peli por id
         /* 
         System.out.println("Ingrese id de la película a eliminar");
