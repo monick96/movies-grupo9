@@ -7,6 +7,8 @@ import java.util.List;
 import com.example.peliculas.db.ConnectorDB;
 import com.example.peliculas.model.Pelicula;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 /**
@@ -51,16 +53,25 @@ public class PeliculaDAO {
         //return null;
     }
 
-    //agregar pelicula a DB
+    // agregar pelicula a DB// todos los campos excepto id
     public Boolean addPeli(Pelicula peli) {
         try {
-            Statement st=ConnectorDB.getSt();
-            String sql = "INSERT INTO peliculas (titulo, puntuacion, descripcion, idioma, portada) " +
-                    "VALUES ('" + peli.getTitulo() + "', '" + peli.getPuntuacion() +
-                    "', '" + peli.getDescripcion() + "', '" + peli.getIdioma() + "', '" + peli.getPortada() + "')";
+            
+            Connection conn = ConnectorDB.getConn();
+            
+            String sql = "INSERT INTO peliculas (titulo, fechaLanzamiento, puntuacion, duracion, descripcion, idioma, estrenada, portada) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, peli.getTitulo());
+            ps.setDate(2, peli.getFechaLanzamiento());
+            ps.setInt(3, peli.getPuntuacion());
+            ps.setTime(4, peli.getDuracion());
+            ps.setString(5, peli.getDescripcion());
+            ps.setString(6, peli.getIdioma());
+            ps.setBoolean(7, peli.getEstrenada());
+            ps.setString(8, peli.getPortada());
 
-            Integer cantInsert = st.executeUpdate(sql);    
-            Boolean insertOk = (cantInsert==1);
+            Integer cantInsert = ps.executeUpdate();
+            Boolean insertOk = (cantInsert == 1);
             return insertOk;
 
         } catch (Exception e) {

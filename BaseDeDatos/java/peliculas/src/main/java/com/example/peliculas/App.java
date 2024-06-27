@@ -4,6 +4,8 @@ import java.sql.Date;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,14 +27,14 @@ public class App
             System.out.println(peli.getTitulo());
             System.out.println(peli.getPortada());
         }
-        //carga de todos los datos de las pelis
+        //carga de todos los datos de las pelis por scanner
         // scanner para que el usuario ingrese datos de la peli
         Scanner scanner = new Scanner(System.in);
         /* 
         // ingreso de los datos
         System.out.println("Ingrese el título de la película");
         String titulo = scanner.nextLine();
-        
+        */
         System.out.println("Ingrese fecha lanzamiento de la película en formato (yyyy-MM-dd)");
         String fechaString = scanner.nextLine();
         //Crear un objeto SimpleDateFormat parsear la fecha ingresada
@@ -46,16 +48,18 @@ public class App
         }
         //fecha para sql
         java.sql.Date fechaLanzamiento  = new java.sql.Date(fechaUtil.getTime());
-        
+        /*
         //puntuacion
         System.out.println("Ingrese la puntuación de la película");
         Integer puntuacion=scanner.nextInt();
-
-        System.out.println("Ingrese duracion de la película en horas");
-        long tiempoHs = scanner.nextLong();
-        long duracionMillis = tiempoHs * 3600000;//hs a milisegundos
-        Time duracion = new Time(duracionMillis);
-
+        */
+        System.out.println("Ingrese duracion de la película en formato (HH:mm:ss)");
+        String tiempoString = scanner.nextLine();
+        //convertimos a localtime
+        LocalTime duracionLocal = LocalTime.parse(tiempoString,DateTimeFormatter.ofPattern("HH:mm:ss"));
+        //convertimos a time
+        Time duracion = Time.valueOf(duracionLocal);
+        /*
         System.out.println("Ingrese la descripcion de la película");
         String descripcion = scanner.nextLine();
 
@@ -68,9 +72,12 @@ public class App
 
         System.out.println("Ingrese la url de la imágen de la película");
         String portada=scanner.nextLine();
-
+        */
         //objeto peli ingresado
-        Pelicula nuevaPeli = new Pelicula(titulo,fechaLanzamiento, puntuacion,duracion,descripcion, idioma, estrenada, portada );
+        //Pelicula nuevaPeli = new Pelicula(titulo,fechaLanzamiento, puntuacion,duracion,descripcion, idioma, estrenada, portada );
+        //Date fechaLanzamiento = Date.valueOf("2023-06-27"); // Formato: yyyy-MM-dd
+        //Time duracion = Time.valueOf("01:30:00"); // Formato: HH:mm:ss
+        Pelicula nuevaPeli = new Pelicula(" pelicula223",fechaLanzamiento, 8,duracion,"descripcion", "idioma",true, "portada" );
         
         // llamo al método que agrega o inserta una película en la db
         Boolean insertOk=peliculaDAO.addPeli(nuevaPeli);
@@ -79,8 +86,6 @@ public class App
         } else {
             System.out.println("Error en la inserción");
         }
-        */
-
         //eliminar una peli por id
         /* 
         System.out.println("Ingrese id de la película a eliminar");
@@ -93,7 +98,6 @@ public class App
             System.out.println("Error en la eliminacion");
         }
         */
-
         ///update peli
         /* 
         Pelicula peliUpdate = new Pelicula(101,"pelicula",new Date(0),5,new Time(500),"cscv","gsdg",false,"gsdgsdgsd");
@@ -102,6 +106,7 @@ public class App
             System.out.println("Se actualizo correctamente");
         }
         */
+
 
     }
 }
