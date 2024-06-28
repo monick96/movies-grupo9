@@ -26,16 +26,31 @@ function renderMovies(movies) {
                 <td>${movie.puntuacion}</td>
                 <td><img src="${movie.portada}" alt="${movie.titulo}" width="150"></td>
                 <td>
-                    <button class="btn btn-danger btn-sm delete-movie" data-index="${index}">Delete</button>
+                    <button class="btn btn-danger btn-sm delete-movie" onclick="deletePeli(${movie.id})"">Delete</button>
                 </td>
             `;
         moviesTableBody.appendChild(row);
     });
 }
 
-// Listar pelis al hacer click
-fetchMoviesButton.addEventListener('click', () => {
-    getPelis();
-});
 
 // Delete peli
+function deletePeli(id) {
+    //apuntamos al endpoint de nuestro controller
+    const response= fetch(`http://localhost:8080/deletePelicula/${id}`, {
+        method: 'DELETE',
+    });
+
+    //2 invocar
+    response
+        .then(response => okDel(response))//fulfilled
+        .catch(error => dibujarError(error))//rejected
+}
+
+function okDel(response) {
+    document.querySelector('#moviesTableBody').innerHTML = "Se eliminó exitosamente";
+}
+
+function dibujarError(error) {
+    document.querySelector('#moviesTableBody').innerHTML = error;
+}
