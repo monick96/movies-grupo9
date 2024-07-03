@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>inicionSesion</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+        <link rel="stylesheet" href="./assets/css/iniciosesion.css">
+        <script src="https://kit.fontawesome.com/1f4579245f.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <a class="boton-volver" href="index.html">
+                <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+                <p>Volver</p>
+            </a>
+        </header>
+        <main>
+            <div class="box-iniciarsesion" data-aos="zoom-in" data-aos-duration="1000">
+                <h2>Iniciar Sesión</h2>
+                <form>
+                    <div>
+                        <input type="text" placeholder="Email/Usuario" required class="form-usuario" id="usuario">
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Contraseña" required class="form-password" id="password">
+                    </div>
+                    <p class="olvidar-contraseña">¿Olvidó su contraseña?</p>
+                    <p class="text-datosIncorrectos" id="datos-incorrectos">Datos incorrectos. Vuelva a Intentarlo</p>
+                    <input type="submit" value="Iniciar Sesión" class="boton-enviar" id="boton-enviar">
+                </form>
+                <p>¿Todavía no estás registrado?</p>
+                <a class="boton-registrarse" href="registrarse.html">Registrarse</a>
+            </div>
+        </main>
+        <script rel="js" src="./assets/js/iniciosesion.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init();</script>
+    </body>
+</html>

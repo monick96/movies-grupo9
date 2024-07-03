@@ -1,0 +1,80 @@
+
+
+body {
+    background-color: #1b1b1b;
+    color: #f8f9fa;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+.table {
+    background-color: #343a40;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    font-size: 1.2rem;
+
+}
+
+.btn-primary {
+    background-color: #c44b5d;
+    border-color: #c44b5d;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #a33e4e;
+    border-color: #a33e4e;
+}
+
+.btn-pink {
+    background-color: #c44b5d;
+    border-color: #c44b5d;
+    color: white;
+}
+
+.btn-pink:hover {
+    background-color: #a33e4e;
+    border-color: #a33e4e;
+}
+
+.navbar, .footer {
+    background-color: #842b35;
+}
+
+.card {
+    border-color: #c44b5d;
+}
+
+.card-header {
+    background-color: #343a40;
+    border-color: #c44b5d;
+    color: #c44b5d;
+}
+
+.card-body {
+    background-color: #343a40;
+}
+
+.modal-content {
+    background-color: #343a40;
+}
+
+.modal-header, .modal-footer {
+    border-color: #c44b5d;
+}
+
+.modal-title {
+    color: #c44b5d;
+}
+
+.close {
+    color: #f8f9fa;
+}
+
+.table-dark th {
+    color: #ffb1bd;
+}
